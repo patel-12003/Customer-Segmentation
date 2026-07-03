@@ -1,0 +1,20 @@
+{
+    "passed": false,
+    "total_checks": 58,
+    "failed_checks": 2,
+    "errors": [
+        "Column 'Year_Birth' has values below min 1940.",
+        "Column 'Income' has values above max 200000."
+    ],
+    "warnings": [],
+    "metrics": {
+        "null_ratios": {
+            "Income": 0.010714285714285714
+        },
+        "duplicate_ratio": 0.0,
+        "n_rows": 2240,
+        "n_columns": 29,
+        "memory_mb": 0.44446372985839844
+    },
+    "timestamp": "2026-06-30T04:31:00.442340"
+}

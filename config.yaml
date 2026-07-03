@@ -1,0 +1,156 @@
+# ===========================================================================
+# config.yaml — Top-level project configuration
+# ===========================================================================
+# Drives the entire pipeline. Paths are relative to the repository root.
+# Override numerical/operational settings in params.yaml.
+
+project:
+  name: "Customer Segmentation & Intelligent Customer Classification"
+  version: "1.0.0"
+  description: "End-to-end production ML system for customer segmentation and segment prediction."
+  author: "Senior ML Engineering Team"
+
+# ---------------------------------------------------------------------------
+# Data Ingestion
+# ---------------------------------------------------------------------------
+data_ingestion:
+  raw_data_path: "data/raw/marketing_campaign.csv"
+  cleaned_data_path: "data/raw/clustered_data.csv"
+  ingested_data_path: "data/processed/ingested.csv"
+  validated_data_path: "data/processed/validated.csv"
+
+# ---------------------------------------------------------------------------
+# Data Validation
+# ---------------------------------------------------------------------------
+data_validation:
+  validated_data_path: "data/processed/validated.csv"
+  report_path: "artifacts/reports/validation_report.json"
+  allowed_null_ratio: 0.05
+  duplicate_threshold: 0.10
+
+# ---------------------------------------------------------------------------
+# Data Transformation
+# ---------------------------------------------------------------------------
+data_transformation:
+  transformed_data_path: "data/processed/transformed.csv"
+  scaler_path: "saved_models/scaler.joblib"
+  preprocessor_path: "saved_models/preprocessor.joblib"
+  numerical_features:
+    - "Year_Birth"
+    - "Income"
+    - "Kidhome"
+    - "Teenhome"
+    - "Recency"
+    - "MntWines"
+    - "MntFruits"
+    - "MntMeatProducts"
+    - "MntFishProducts"
+    - "MntSweetProducts"
+    - "MntGoldProds"
+    - "NumDealsPurchases"
+    - "NumWebPurchases"
+    - "NumCatalogPurchases"
+    - "NumStorePurchases"
+    - "NumWebVisitsMonth"
+  categorical_features:
+    - "Education"
+    - "Marital_Status"
+
+# ---------------------------------------------------------------------------
+# Feature Engineering
+# ---------------------------------------------------------------------------
+feature_engineering:
+  engineered_data_path: "data/processed/engineered.csv"
+  feature_store_path: "saved_models/feature_store.joblib"
+  new_features:
+    - "Age"
+    - "Total_Spending"
+    - "Total_Purchases"
+    - "Children"
+    - "Parental_Status"
+    - "Days_as_Customer"
+    - "Total_Promo"
+    - "Avg_Order_Value"
+    - "Spending_Per_Child"
+
+# ---------------------------------------------------------------------------
+# Feature Selection
+# ---------------------------------------------------------------------------
+feature_selection:
+  selected_features_path: "data/processed/selected_features.csv"
+  selector_path: "saved_models/feature_selector.joblib"
+  method: "mutual_info"
+  k_features: 15
+
+# ---------------------------------------------------------------------------
+# Clustering
+# ---------------------------------------------------------------------------
+clustering:
+  clustered_data_path: "data/processed/clustered.csv"
+  best_clusterer_path: "saved_models/best_clusterer.joblib"
+  report_path: "artifacts/reports/clustering_report.json"
+  n_clusters: 3
+  algorithms:
+    - "kmeans"
+    - "minibatch_kmeans"
+    - "gmm"
+    - "agglomerative"
+    - "birch"
+    - "dbscan"
+    - "hdbscan"
+    - "optics"
+    - "meanshift"
+    - "spectral"
+  random_state: 42
+
+# ---------------------------------------------------------------------------
+# Supervised Learning
+# ---------------------------------------------------------------------------
+supervised:
+  train_data_path: "data/processed/train.csv"
+  test_data_path: "data/processed/test.csv"
+  best_classifier_path: "saved_models/best_classifier.joblib"
+  report_path: "artifacts/reports/supervised_report.json"
+  models:
+    - "random_forest"
+    - "extra_trees"
+    - "xgboost"
+    - "lightgbm"
+    - "catboost"
+    - "hist_gradient_boosting"
+    - "gradient_boosting"
+    - "adaboost"
+    - "bagging"
+    - "voting"
+    - "stacking"
+  test_size: 0.2
+  random_state: 42
+  tuning_trials: 30
+
+# ---------------------------------------------------------------------------
+# AutoGluon
+# ---------------------------------------------------------------------------
+autogluon:
+  automl_dir: "saved_models/autogluon"
+  time_limit: 300
+  presets: "medium_quality"
+  eval_metric: "accuracy"
+
+# ---------------------------------------------------------------------------
+# Explainability
+# ---------------------------------------------------------------------------
+explainability:
+  shap_path: "saved_models/explainability/shap_values.joblib"
+  lime_path: "saved_models/explainability/lime_explainer.joblib"
+  sample_size: 200
+
+# ---------------------------------------------------------------------------
+# Streamlit App
+# ---------------------------------------------------------------------------
+app:
+  title: "Customer Segmentation & Intelligent Classification"
+  page_title: "Customer Segmentation AI"
+  page_icon: "🛍️"
+  layout: "wide"
+  initial_sidebar_state: "expanded"
+  theme_base: "dark"

@@ -1,0 +1,162 @@
+# ===========================================================================
+# model.yaml — Model registry and metadata
+# ===========================================================================
+# Describes each model registered in the project along with default
+# hyperparameters used as a starting point. Optuna explores around these.
+
+clustering_models:
+  kmeans:
+    class: "sklearn.cluster.KMeans"
+    default_params:
+      n_clusters: 3
+      init: "k-means++"
+      n_init: 10
+      random_state: 42
+  minibatch_kmeans:
+    class: "sklearn.cluster.MiniBatchKMeans"
+    default_params:
+      n_clusters: 3
+      batch_size: 256
+      n_init: 10
+      random_state: 42
+  gmm:
+    class: "sklearn.mixture.GaussianMixture"
+    default_params:
+      n_components: 3
+      covariance_type: "full"
+      n_init: 5
+      random_state: 42
+  agglomerative:
+    class: "sklearn.cluster.AgglomerativeClustering"
+    default_params:
+      n_clusters: 3
+      linkage: "ward"
+  birch:
+    class: "sklearn.cluster.Birch"
+    default_params:
+      n_clusters: 3
+      threshold: 0.5
+  dbscan:
+    class: "sklearn.cluster.DBSCAN"
+    default_params:
+      eps: 0.8
+      min_samples: 10
+  hdbscan:
+    class: "hdbscan.HDBSCAN"
+    default_params:
+      min_cluster_size: 30
+      min_samples: 5
+  optics:
+    class: "sklearn.cluster.OPTICS"
+    default_params:
+      min_samples: 10
+      xi: 0.05
+  meanshift:
+    class: "sklearn.cluster.MeanShift"
+    default_params:
+      cluster_all: false
+  spectral:
+    class: "sklearn.cluster.SpectralClustering"
+    default_params:
+      n_clusters: 3
+      affinity: "rbf"
+      n_neighbors: 10
+      random_state: 42
+
+supervised_models:
+  random_forest:
+    class: "sklearn.ensemble.RandomForestClassifier"
+    default_params:
+      n_estimators: 400
+      max_depth: null
+      min_samples_split: 2
+      class_weight: "balanced"
+      random_state: 42
+      n_jobs: -1
+  extra_trees:
+    class: "sklearn.ensemble.ExtraTreesClassifier"
+    default_params:
+      n_estimators: 500
+      random_state: 42
+      n_jobs: -1
+  xgboost:
+    class: "xgboost.XGBClassifier"
+    default_params:
+      n_estimators: 400
+      learning_rate: 0.05
+      max_depth: 6
+      subsample: 0.9
+      colsample_bytree: 0.9
+      use_label_encoder: false
+      eval_metric: "mlogloss"
+      random_state: 42
+      n_jobs: -1
+  lightgbm:
+    class: "lightgbm.LGBMClassifier"
+    default_params:
+      n_estimators: 400
+      learning_rate: 0.05
+      num_leaves: 31
+      subsample: 0.9
+      colsample_bytree: 0.9
+      random_state: 42
+      n_jobs: -1
+      verbose: -1
+  catboost:
+    class: "catboost.CatBoostClassifier"
+    default_params:
+      iterations: 500
+      learning_rate: 0.05
+      depth: 6
+      verbose: false
+      random_state: 42
+  hist_gradient_boosting:
+    class: "sklearn.ensemble.HistGradientBoostingClassifier"
+    default_params:
+      max_iter: 400
+      learning_rate: 0.05
+      max_leaf_nodes: 31
+      random_state: 42
+  gradient_boosting:
+    class: "sklearn.ensemble.GradientBoostingClassifier"
+    default_params:
+      n_estimators: 300
+      learning_rate: 0.05
+      max_depth: 3
+      random_state: 42
+  adaboost:
+    class: "sklearn.ensemble.AdaBoostClassifier"
+    default_params:
+      n_estimators: 200
+      learning_rate: 0.5
+      random_state: 42
+  bagging:
+    class: "sklearn.ensemble.BaggingClassifier"
+    default_params:
+      n_estimators: 300
+      max_samples: 0.8
+      max_features: 0.8
+      random_state: 42
+      n_jobs: -1
+  voting:
+    class: "sklearn.ensemble.VotingClassifier"
+    default_params:
+      voting: "soft"
+      n_jobs: -1
+  stacking:
+    class: "sklearn.ensemble.StackingClassifier"
+    default_params:
+      passthrough: false
+      n_jobs: -1
+
+autogluon:
+  class: "autogluon.tabular.TabularPredictor"
+  default_params:
+    label: "cluster"
+    path: "saved_models/autogluon"
+    eval_metric: "accuracy"
+
+model_versioning:
+  format: "{model_name}_v{version}_{timestamp}"
+  current_version: "1.0.0"
+  registry_path: "saved_models/model_registry.json"

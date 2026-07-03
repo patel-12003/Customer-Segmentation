@@ -1,0 +1,64 @@
+# ===========================================================================
+# Customer Segmentation & Intelligent Customer Classification — Requirements
+# ===========================================================================
+# Tested with Python 3.11+
+# Install with:  pip install -r requirements.txt
+
+# --- Core scientific stack ---
+numpy
+pandas
+scipy
+pyyaml
+python-dateutil
+
+# --- Scikit-learn + clustering ---
+scikit-learn
+hdbscan
+
+# --- Gradient boosting libraries ---
+xgboost
+lightgbm
+catboost
+
+# --- AutoML ---
+# (Optional — AutoGluon is heavy. Comment out if you want a lighter install.)
+# autogluon.tabular
+
+# --- Hyperparameter tuning ---
+optuna
+
+# --- Explainability ---
+shap    
+lime
+
+# --- Visualization ---
+matplotlib
+seaborn
+plotly
+
+# --- Streamlit dashboard ---
+streamlit
+streamlit-lottie
+streamlit-icons
+requests  # needed for lottie file loading
+
+# --- Jupyter / notebooks ---
+jupyterlab
+ipykernel
+nbformat
+
+# --- Utilities ---
+joblib
+tqdm
+colorama
+
+# --- AI Integration ---
+google-generativeai
+
+# --- Report Generation ---
+reportlab
+fpdf2
+python-docx
+
+# --- Security & Sanitization ---
+bleach

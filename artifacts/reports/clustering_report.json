@@ -1,0 +1,136 @@
+{
+    "best_model": "kmeans",
+    "best_silhouette": 0.2160886973142624,
+    "best_davies_bouldin": 1.8583051065092482,
+    "best_calinski_harabasz": 690.1725312659464,
+    "n_clusters": 3,
+    "all_results": [
+        {
+            "name": "kmeans",
+            "n_clusters": 3,
+            "silhouette": 0.2160886973142624,
+            "davies_bouldin": 1.8583051065092482,
+            "calinski_harabasz": 690.1725312659464,
+            "inertia": 29089.97265625,
+            "stability": 0.9656916116301557,
+            "interpretability": 0.6107091661542408,
+            "execution_seconds": 0.03721899899937853,
+            "params": {
+                "init": "k-means++",
+                "n_init": 10,
+                "max_iter": 300
+            },
+            "composite_score": 0.5380457164155326
+        },
+        {
+            "name": "minibatch_kmeans",
+            "n_clusters": 3,
+            "silhouette": 0.20891515910625458,
+            "davies_bouldin": 1.8517242503371039,
+            "calinski_harabasz": 687.8128761211051,
+            "inertia": 29149.125,
+            "stability": 0.9124289930042255,
+            "interpretability": 0.6435276942269381,
+            "execution_seconds": 0.010617414999614994,
+            "params": {
+                "batch_size": 256,
+                "n_init": 10
+            },
+            "composite_score": 0.5282980675121047
+        },
+        {
+            "name": "gmm",
+            "n_clusters": 3,
+            "silhouette": 0.19689641892910004,
+            "davies_bouldin": 2.2450975252203373,
+            "calinski_harabasz": 436.89555512978166,
+            "inertia": 11.371177673339844,
+            "stability": 0.0,
+            "interpretability": 0.28816323833683466,
+            "execution_seconds": 0.8417959150001479,
+            "params": {
+                "covariance_type": "full",
+                "n_init": 5
+            },
+            "composite_score": 0.1926624786649795
+        },
+        {
+            "name": "agglomerative",
+            "n_clusters": 3,
+            "silhouette": 0.18359842896461487,
+            "davies_bouldin": 1.9016796925534092,
+            "calinski_harabasz": 613.0739016767076,
+            "inertia": null,
+            "stability": 0.7801819386320838,
+            "interpretability": 0.6931184276858247,
+            "execution_seconds": 0.09185724399958417,
+            "params": {
+                "linkage": "ward"
+            },
+            "composite_score": 0.4867212704061458
+        },
+        {
+            "name": "birch",
+            "n_clusters": 3,
+            "silhouette": 0.1909611076116562,
+            "davies_bouldin": 1.8489193714760335,
+            "calinski_harabasz": 629.7146202519813,
+            "inertia": null,
+            "stability": 0.7856337294435325,
+            "interpretability": 0.6868896267011473,
+            "execution_seconds": 0.15918266599965136,
+            "params": {
+                "threshold": 0.5
+            },
+            "composite_score": 0.49232693991303933
+        },
+        {
+            "name": "hdbscan",
+            "n_clusters": 3,
+            "silhouette": 0.053518444299697876,
+            "davies_bouldin": 1.9303810964153016,
+            "calinski_harabasz": 256.10812348900043,
+            "inertia": null,
+            "stability": 0.5,
+            "interpretability": 0.054753658426279106,
+            "execution_seconds": 0.12315324100018188,
+            "params": {
+                "min_cluster_size": 30,
+                "min_samples": 5
+            },
+            "composite_score": 0.20079590348044665
+        },
+        {
+            "name": "meanshift",
+            "n_clusters": 9,
+            "silhouette": 0.2775198817253113,
+            "davies_bouldin": 0.7234014689737205,
+            "calinski_harabasz": 111.57389363418233,
+            "inertia": null,
+            "stability": 0.5,
+            "interpretability": 0.0,
+            "execution_seconds": 6.563460645000305,
+            "params": {
+                "bandwidth": 4.773937434196472,
+                "cluster_all": false
+            },
+            "composite_score": 0.28510865090398074
+        },
+        {
+            "name": "spectral",
+            "n_clusters": 3,
+            "silhouette": 0.38928571343421936,
+            "davies_bouldin": 0.8832634333870245,
+            "calinski_harabasz": 13.97805829015239,
+            "inertia": null,
+            "stability": 0.5,
+            "interpretability": 0.0,
+            "execution_seconds": 0.3192644640002982,
+            "params": {
+                "affinity": "rbf",
+                "n_neighbors": 10
+            },
+            "composite_score": 0.3173910339795859
+        }
+    ]
+}

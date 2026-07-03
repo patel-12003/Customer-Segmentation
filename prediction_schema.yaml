@@ -1,0 +1,173 @@
+# ===========================================================================
+# prediction_schema.yaml — Schema for new-customer prediction requests
+# ===========================================================================
+# Used by the Streamlit app and the prediction pipeline to validate
+# incoming customer feature dictionaries before scoring.
+
+target: "cluster"
+target_labels:
+  0: "Budget-Conscious Families"
+  1: "Premium High-Spenders"
+  2: "Mainstream Loyalists"
+
+features:
+  - name: Age
+    dtype: int
+    min: 18
+    max: 100
+    default: 45
+    description: "Customer age in years."
+
+  - name: Education
+    dtype: int
+    min: 0
+    max: 4
+    default: 2
+    description: "Encoded education level (0=Basic, 1=2n Cycle, 2=Graduation, 3=Master, 4=PhD)."
+
+  - name: "Marital Status"
+    dtype: int
+    min: 0
+    max: 1
+    default: 0
+    description: "Encoded marital status (0=Single/Alone, 1=In a relationship)."
+
+  - name: "Parental Status"
+    dtype: int
+    min: 0
+    max: 1
+    default: 0
+    description: "1 if the customer has at least one child, 0 otherwise."
+
+  - name: Children
+    dtype: int
+    min: 0
+    max: 5
+    default: 1
+    description: "Total number of children (kids + teens)."
+
+  - name: Income
+    dtype: float
+    min: 0
+    max: 200000
+    default: 50000
+    description: "Annual household income."
+
+  - name: Total_Spending
+    dtype: float
+    min: 0
+    max: 100000
+    default: 1000
+    description: "Total amount spent across all product categories."
+
+  - name: Days_as_Customer
+    dtype: int
+    min: 0
+    max: 4000
+    default: 2500
+    description: "Number of days since the customer enrolled."
+
+  - name: Recency
+    dtype: int
+    min: 0
+    max: 100
+    default: 50
+    description: "Days since the last purchase."
+
+  - name: Wines
+    dtype: float
+    min: 0
+    max: 2000
+    default: 300
+    description: "Amount spent on wine."
+  - name: Fruits
+    dtype: float
+    min: 0
+    max: 500
+    default: 30
+    description: "Amount spent on fruits."
+  - name: Meat
+    dtype: float
+    min: 0
+    max: 2000
+    default: 200
+    description: "Amount spent on meat."
+  - name: Fish
+    dtype: float
+    min: 0
+    max: 500
+    default: 50
+    description: "Amount spent on fish."
+  - name: Sweets
+    dtype: float
+    min: 0
+    max: 500
+    default: 30
+    description: "Amount spent on sweets."
+  - name: Gold
+    dtype: float
+    min: 0
+    max: 500
+    default: 50
+    description: "Amount spent on gold products."
+
+  - name: Web
+    dtype: int
+    min: 0
+    max: 50
+    default: 5
+    description: "Number of web purchases."
+  - name: Catalog
+    dtype: int
+    min: 0
+    max: 50
+    default: 3
+    description: "Number of catalog purchases."
+  - name: Store
+    dtype: int
+    min: 0
+    max: 50
+    default: 6
+    description: "Number of in-store purchases."
+  - name: "Discount Purchases"
+    dtype: int
+    min: 0
+    max: 50
+    default: 2
+    description: "Number of purchases made with a discount."
+  - name: "Total Promo"
+    dtype: int
+    min: 0
+    max: 5
+    default: 0
+    description: "Number of marketing campaigns accepted."
+  - name: NumWebVisitsMonth
+    dtype: int
+    min: 0
+    max: 30
+    default: 5
+    description: "Web visits in the last month."
+
+# Cluster business profiles (used by Streamlit app)
+cluster_profiles:
+  0:
+    name: "Budget-Conscious Families"
+    description: "Mid-income customers with children who look for discounts and visit the website frequently."
+    recommendations:
+      - "Send targeted discount codes and family bundle offers."
+      - "Promote web-only flash sales to drive conversion."
+      - "Avoid premium-tier product recommendations."
+  1:
+    name: "Premium High-Spenders"
+    description: "High-income customers who buy wine, meat, and gold products through catalog and store channels."
+    recommendations:
+      - "Curate premium product bundles and loyalty rewards."
+      - "Offer early access to new premium launches."
+      - "Use personalized CRM communications."
+  2:
+    name: "Mainstream Loyalists"
+    description: "Mid-to-high income, low child responsibility, balanced spending across categories."
+    recommendations:
+      - "Cross-sell complementary products across categories."
+      - "Encourage catalog & store engagement."
+      - "Introduce referral incentives to leverage their network."

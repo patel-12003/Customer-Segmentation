@@ -1,0 +1,191 @@
+# ===========================================================================
+# schema.yaml — Source dataset schema (marketing_campaign.csv)
+# ===========================================================================
+# Used by the data-validation module to enforce column presence, types,
+# ranges and allowed categories before transformation.
+
+dataset:
+  name: "marketing_campaign"
+  file: "marketing_campaign.csv"
+  separator: ","
+  encoding: "utf-8"
+  target: null  # unsupervised stage
+  min_rows: 1000
+
+columns:
+  - name: ID
+    dtype: int
+    nullable: false
+    unique: true
+    drop: true
+
+  - name: Year_Birth
+    dtype: int
+    nullable: false
+    min: 1940
+    max: 2010
+
+  - name: Education
+    dtype: object
+    nullable: false
+    allowed:
+      - "Graduation"
+      - "PhD"
+      - "Master"
+      - "Basic"
+      - "2n Cycle"
+
+  - name: Marital_Status
+    dtype: object
+    nullable: false
+    allowed:
+      - "Single"
+      - "Together"
+      - "Married"
+      - "Divorced"
+      - "Widow"
+      - "Alone"
+      - "Absurd"
+      - "YOLO"
+
+  - name: Income
+    dtype: float
+    nullable: true
+    min: 0
+    max: 200000
+
+  - name: Kidhome
+    dtype: int
+    nullable: false
+    min: 0
+    max: 5
+
+  - name: Teenhome
+    dtype: int
+    nullable: false
+    min: 0
+    max: 5
+
+  - name: Dt_Customer
+    dtype: object
+    nullable: false
+    date_format: "%m/%d/%Y"
+
+  - name: Recency
+    dtype: int
+    nullable: false
+    min: 0
+    max: 100
+
+  - name: MntWines
+    dtype: int
+    nullable: false
+    min: 0
+  - name: MntFruits
+    dtype: int
+    nullable: false
+    min: 0
+  - name: MntMeatProducts
+    dtype: int
+    nullable: false
+    min: 0
+  - name: MntFishProducts
+    dtype: int
+    nullable: false
+    min: 0
+  - name: MntSweetProducts
+    dtype: int
+    nullable: false
+    min: 0
+  - name: MntGoldProds
+    dtype: int
+    nullable: false
+    min: 0
+
+  - name: NumDealsPurchases
+    dtype: int
+    nullable: false
+    min: 0
+  - name: NumWebPurchases
+    dtype: int
+    nullable: false
+    min: 0
+  - name: NumCatalogPurchases
+    dtype: int
+    nullable: false
+    min: 0
+  - name: NumStorePurchases
+    dtype: int
+    nullable: false
+    min: 0
+  - name: NumWebVisitsMonth
+    dtype: int
+    nullable: false
+    min: 0
+
+  - name: AcceptedCmp3
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: AcceptedCmp4
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: AcceptedCmp5
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: AcceptedCmp1
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: AcceptedCmp2
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: Complain
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+  - name: Z_CostContact
+    dtype: int
+    nullable: false
+    drop: true
+  - name: Z_Revenue
+    dtype: int
+    nullable: false
+    drop: true
+  - name: Response
+    dtype: int
+    nullable: false
+    min: 0
+    max: 1
+
+derived_columns:
+  - name: Age
+    formula: "current_year - Year_Birth"
+    dtype: int
+  - name: Children
+    formula: "Kidhome + Teenhome"
+    dtype: int
+  - name: Parental_Status
+    formula: "1 if Children > 0 else 0"
+    dtype: int
+  - name: Total_Spending
+    formula: "MntWines + MntFruits + MntMeatProducts + MntFishProducts + MntSweetProducts + MntGoldProds"
+    dtype: float
+  - name: Total_Purchases
+    formula: "NumWebPurchases + NumCatalogPurchases + NumStorePurchases"
+    dtype: int
+  - name: Total_Promo
+    formula: "AcceptedCmp1 + AcceptedCmp2 + AcceptedCmp3 + AcceptedCmp4 + AcceptedCmp5"
+    dtype: int
+  - name: Days_as_Customer
+    formula: "today - Dt_Customer"
+    dtype: int

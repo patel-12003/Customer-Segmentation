@@ -1,0 +1,33 @@
+{
+    "success": true,
+    "steps_completed": [
+        "ingestion",
+        "validation",
+        "transformation",
+        "feature_engineering",
+        "feature_selection",
+        "clustering",
+        "supervised_training",
+        "shap"
+    ],
+    "best_clustering_model": "kmeans",
+    "best_supervised_model": "hist_gradient_boosting",
+    "n_clusters": 3,
+    "best_accuracy": 0.9575892857142857,
+    "artifacts": {
+        "ingestion": "data/processed/ingested.csv",
+        "transformation": "data/processed/transformed.csv",
+        "engineered": "data/processed/engineered.csv",
+        "selected_features": "data/processed/selected_features.csv",
+        "clustered": "data/processed/clustered.csv",
+        "train_split": "data/processed/train.csv",
+        "test_split": "data/processed/test.csv",
+        "best_clusterer": "saved_models/best_clusterer.joblib",
+        "best_classifier": "saved_models/best_classifier.joblib",
+        "clustering_report": "artifacts/reports/clustering_report.json",
+        "supervised_report": "artifacts/reports/supervised_report.json",
+        "autogluon": null,
+        "shap": "saved_models/explainability/shap_values.joblib",
+        "lime": null
+    }
+}
