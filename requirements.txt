@@ -39,7 +39,6 @@ plotly
 # --- Streamlit dashboard ---
 streamlit
 streamlit-lottie
-streamlit-icons
 requests  # needed for lottie file loading
 
 # --- Jupyter / notebooks ---
