@@ -73,7 +73,7 @@ class TrainPipeline:
             :class:`PipelineResult` with summary.
         """
         logger.info("=" * 70)
-        logger.info("Customer Segmentation — Training Pipeline Starting")
+        logger.info("Customer Categorizer — Training Pipeline Starting")
         logger.info("=" * 70)
 
         try:

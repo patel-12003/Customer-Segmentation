@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This specification defines an advanced AI-powered enhancement for the customer segmentation system. The enhancement enables users to upload their own customer datasets, automatically process them through the complete segmentation pipeline, receive AI-generated business insights using Google Gemini API, visualize results with advanced interactive charts, and generate comprehensive professional reports in PDF and DOCX formats. Additionally, the system replaces all emoji-based icons with a professional icon library and fixes Lottie animation rendering issues.
+This specification defines an advanced AI-powered enhancement for the Customer Categorizer system. The enhancement enables users to upload their own customer datasets, automatically process them through the complete segmentation pipeline, receive AI-generated business insights using Google Gemini API, visualize results with advanced interactive charts, and generate comprehensive professional reports in PDF and DOCX formats. Additionally, the system replaces all emoji-based icons with a professional icon library and fixes Lottie animation rendering issues.
 
 ## Glossary
 
-- **Segmentation_System**: The existing customer segmentation and classification ML pipeline
+- **Segmentation_System**: The existing Customer Categorizer and classification ML pipeline
 - **Upload_Handler**: Component responsible for accepting and validating CSV file uploads
 - **Pipeline_Executor**: Component that orchestrates the complete segmentation workflow
 - **Gemini_Integration**: Component interfacing with Google Gemini API for AI insights

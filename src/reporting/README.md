@@ -63,7 +63,7 @@ results = {
 
 # Configure report
 config = ReportConfig(
-    title="Customer Segmentation Analysis",
+    title="Customer Categorizer Analysis",
     include_executive_summary=True,
     include_cluster_profiles=True,
     include_business_recommendations=True
@@ -87,7 +87,7 @@ composer.generate_docx(config, docx_path)
 @dataclass
 class ReportConfig:
     title: str
-    author: str = "Customer Segmentation System"
+    author: str = "Customer Categorizer System"
     include_toc: bool = True
     include_executive_summary: bool = True
     include_dataset_overview: bool = True

@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 setup(
     name="customer_segmentation",
     version="1.0.0",
-    description="End-to-end Customer Segmentation & Intelligent Customer Classification System",
+    description="End-to-end Customer Categorizer & Intelligent Customer Classification System",
     author="Senior ML Engineering Team",
     author_email="team@example.com",
     license="MIT",

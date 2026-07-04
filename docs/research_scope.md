@@ -105,8 +105,8 @@ Test classifier robustness:
 
 ## Suggested Paper Titles
 
-1. "Deep vs. Classical Clustering for Customer Segmentation: An Empirical Comparison"
-2. "Causal Customer Segmentation: Uplift-Aware Cluster Discovery"
+1. "Deep vs. Classical Clustering for Customer Categorizer: An Empirical Comparison"
+2. "Causal Customer Categorizer: Uplift-Aware Cluster Discovery"
 3. "Counterfactual Customer Explanations: From SHAP to Actionable Insights"
 4. "Graph Neural Networks for Customer-Product Bipartite Segmentation"
 5. "Bayesian Uncertainty Quantification for Customer Segment Assignment"

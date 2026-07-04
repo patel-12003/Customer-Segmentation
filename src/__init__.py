@@ -1,7 +1,7 @@
 """
-Customer Segmentation & Intelligent Customer Classification System
+Customer Categorizer & Intelligent Customer Classification System
 =================================================================
-End-to-end production ML package for customer segmentation and
+End-to-end production ML package for Customer Categorizer and
 supervised segment prediction.
 
 Author: Senior ML Engineering Team

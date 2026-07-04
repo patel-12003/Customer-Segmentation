@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-app.py — Customer Segmentation & Intelligent Classification Dashboard
+app.py — Customer Categorizer & Intelligent Classification Dashboard
 =====================================================================
 A professional, dark-themed Streamlit application that showcases every
 stage of the customer-segmentation ML pipeline.
@@ -88,7 +88,7 @@ PAGES = [
 # Streamlit config
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Customer Segmentation AI",
+    page_title="Customer Categorizer AI",
     page_icon="🛍️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -170,7 +170,7 @@ def load_lottie_url(url: str):
 # PAGE 1 — Home / Dashboard
 # ===========================================================================
 def page_home():
-    st.markdown("# <span style='font-size:1.8rem;'>🛍️</span>  Customer Segmentation & Intelligent Classification", unsafe_allow_html=True)
+    st.markdown("# <span style='font-size:1.8rem;'>🛍️</span>  Customer Categorizer & Intelligent Classification", unsafe_allow_html=True)
     st.markdown(
         "<p style='color:#9aa6b2;font-size:1.05rem;margin-top:-10px;'>"
         "An end-to-end, production-grade machine-learning system that "
@@ -294,7 +294,7 @@ def page_about():
     <div style='background:#1b2230;border:1px solid #2a323f;border-radius:14px;
                 padding:24px 28px;color:#e8eef5;line-height:1.7;'>
     This project delivers an <b>end-to-end, production-ready Machine Learning system</b>
-    for customer segmentation and intelligent customer classification. It is built as
+    for Customer Categorizer and intelligent customer classification. It is built as
     part of a <b>Master's in Data Science</b> capstone and is structured to be
     suitable for GitHub, academic evaluation, industry portfolios, and research
     publication.

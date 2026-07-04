@@ -1,5 +1,5 @@
 """
-Custom exception hierarchy for the Customer Segmentation project.
+Custom exception hierarchy for the Customer Categorizer project.
 
 Provides a single ``CustomerSegmentationException`` that captures rich
 context (file name, line number, custom error message) so that the
@@ -21,7 +21,7 @@ class CustomerSegmentationException(Exception):
 
     def __init__(
         self,
-        message: str = "A Customer Segmentation error occurred.",
+        message: str = "A Customer Categorizer error occurred.",
         error_details: Optional[Any] = None,
     ) -> None:
         super().__init__(message)

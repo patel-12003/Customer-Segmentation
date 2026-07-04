@@ -5,9 +5,9 @@
 # Override numerical/operational settings in params.yaml.
 
 project:
-  name: "Customer Segmentation & Intelligent Customer Classification"
+  name: "Customer Categorizer & Intelligent Customer Classification"
   version: "1.0.0"
-  description: "End-to-end production ML system for customer segmentation and segment prediction."
+  description: "End-to-end production ML system for Customer Categorizer and segment prediction."
   author: "Senior ML Engineering Team"
 
 # ---------------------------------------------------------------------------
@@ -148,8 +148,8 @@ explainability:
 # Streamlit App
 # ---------------------------------------------------------------------------
 app:
-  title: "Customer Segmentation & Intelligent Classification"
-  page_title: "Customer Segmentation AI"
+  title: "Customer Categorizer & Intelligent Classification"
+  page_title: "Customer Categorizer AI"
   page_icon: "🛍️"
   layout: "wide"
   initial_sidebar_state: "expanded"

@@ -407,7 +407,7 @@ def footer() -> None:
     """Render a small footer."""
     st.markdown(
         "<div class='app-footer'>"
-        "Customer Segmentation & Intelligent Classification System  •  "
+        "Customer Categorizer & Intelligent Classification System  •  "
         "Built with ❤️ using Python, scikit-learn & Streamlit"
         "</div>",
         unsafe_allow_html=True,

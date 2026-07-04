@@ -4,7 +4,7 @@ This document describes the infrastructure for the AI-powered dataset upload and
 
 ## Overview
 
-The infrastructure adds three new modules to the customer segmentation system:
+The infrastructure adds three new modules to the Customer Categorizer system:
 
 1. **Upload Module** (`src/upload/`): Handles CSV file uploads and validation
 2. **AI Module** (`src/ai/`): Integrates with Google Gemini API for insight generation

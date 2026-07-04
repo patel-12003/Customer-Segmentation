@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design document specifies the technical architecture for adding AI-powered dataset upload, processing, and reporting capabilities to the existing customer segmentation system. The enhancement enables users to upload custom CSV datasets, automatically execute the complete segmentation pipeline, receive AI-generated insights via Google Gemini API, visualize results with advanced interactive charts, and generate professional reports in PDF and DOCX formats.
+This design document specifies the technical architecture for adding AI-powered dataset upload, processing, and reporting capabilities to the existing Customer Categorizer system. The enhancement enables users to upload custom CSV datasets, automatically execute the complete segmentation pipeline, receive AI-generated insights via Google Gemini API, visualize results with advanced interactive charts, and generate professional reports in PDF and DOCX formats.
 
 The system integrates seamlessly with existing pipeline components (data ingestion, validation, transformation, feature engineering, clustering, supervised learning) while adding new layers for AI insight generation, advanced visualization, and report production. Additionally, the system replaces emoji-based icons with a professional icon system and resolves Lottie animation rendering issues.
 
@@ -78,7 +78,7 @@ graph TB
 
 ### System Context
 
-The feature integrates with the existing customer segmentation system built with:
+The feature integrates with the existing Customer Categorizer system built with:
 - **Language**: Python 3.11+
 - **UI Framework**: Streamlit with dark theme customization
 - **ML Pipeline**: Modular components in `src/` (data, features, models, pipeline, evaluation, explainability)
@@ -637,7 +637,7 @@ class InsightGenerator:
 
 *Cluster Profile Prompt Template*:
 ```
-You are a business analyst specializing in customer segmentation. Analyze the following customer segment:
+You are a business analyst specializing in Customer Categorizer. Analyze the following customer segment:
 
 Cluster ID: {cluster_id}
 Size: {size} customers ({percentage}% of total)
@@ -667,7 +667,7 @@ Keep each explanation concise (2-3 sentences) and business-focused.
 
 *Executive Summary Prompt Template*:
 ```
-You are a senior analyst preparing an executive summary. Summarize these customer segmentation findings:
+You are a senior analyst preparing an executive summary. Summarize these Customer Categorizer findings:
 
 Dataset: {n_rows} customers, {n_features} features
 Data Quality: {quality_summary}
@@ -949,7 +949,7 @@ class ReportSection:
 class ReportConfig:
     """Configuration for report generation."""
     title: str
-    author: str = "Customer Segmentation System"
+    author: str = "Customer Categorizer System"
     include_toc: bool = True
     include_executive_summary: bool = True
     include_dataset_overview: bool = True

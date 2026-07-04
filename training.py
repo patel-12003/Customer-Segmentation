@@ -41,7 +41,7 @@ logger = get_logger("training")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Customer Segmentation — end-to-end training pipeline"
+        description="Customer Categorizer — end-to-end training pipeline"
     )
     parser.add_argument(
         "--skip-autogluon",

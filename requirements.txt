@@ -1,5 +1,5 @@
 # ===========================================================================
-# Customer Segmentation & Intelligent Customer Classification — Requirements
+# Customer Categorizer & Intelligent Customer Classification — Requirements
 # ===========================================================================
 # Tested with Python 3.11+
 # Install with:  pip install -r requirements.txt

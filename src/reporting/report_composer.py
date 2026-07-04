@@ -27,7 +27,7 @@ class ReportSection:
 class ReportConfig:
     """Configuration for report generation."""
     title: str
-    author: str = "Customer Segmentation System"
+    author: str = "Customer Categorizer System"
     include_toc: bool = True
     include_executive_summary: bool = True
     include_dataset_overview: bool = True
