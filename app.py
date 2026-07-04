@@ -1334,7 +1334,7 @@ def render_sidebar() -> str:
                             background:linear-gradient(90deg,#00d2ff 0%,#7c4dff 100%);
                             -webkit-background-clip:text;-webkit-text-fill-color:transparent;
                             background-clip:text;line-height:1.2;'>
-                    🛍️ Customer<br>Segmentation AI
+                    🛍️ Customer<br>Categorizer AI
                 </div>
                 <div style='color:#4a5568;font-size:0.75rem;margin-top:8px;
                             letter-spacing:0.04em;font-weight:500;'>
